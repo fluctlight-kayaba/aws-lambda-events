@@ -320,8 +320,7 @@ pub struct CognitoEventUserPoolsDefineAuthChallengeRequest {
     #[serde(deserialize_with = "deserialize_lambda_map")]
     #[serde(default)]
     pub client_metadata: HashMap<String, String>,
-    #[serde(default="bool::default")]
-    pub user_not_found: bool,
+    pub user_not_found: Option<bool>,
 }
 
 /// `CognitoEventUserPoolsDefineAuthChallengeResponse` defines auth challenge response parameters
@@ -331,10 +330,8 @@ pub struct CognitoEventUserPoolsDefineAuthChallengeResponse {
     #[serde(deserialize_with = "deserialize_lambda_string")]
     #[serde(default)]
     pub challenge_name: Option<String>,
-    #[serde(default="bool::default")]
-    pub issue_tokens: bool,
-    #[serde(default="bool::default")]
-    pub fail_authentication: bool,
+    pub issue_tokens: Option<bool>,
+    pub fail_authentication: Option<bool>,
 }
 
 /// `CognitoEventUserPoolsDefineAuthChallenge` sent by AWS Cognito User Pools to initiate custom authentication flow
