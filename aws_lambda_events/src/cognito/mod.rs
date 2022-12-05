@@ -320,7 +320,7 @@ pub struct CognitoEventUserPoolsDefineAuthChallengeRequest {
     #[serde(deserialize_with = "deserialize_lambda_map")]
     #[serde(default)]
     pub client_metadata: HashMap<String, String>,
-    #[serde(default="bool:default")]
+    #[serde(default="bool::default")]
     pub user_not_found: bool,
 }
 
@@ -331,9 +331,9 @@ pub struct CognitoEventUserPoolsDefineAuthChallengeResponse {
     #[serde(deserialize_with = "deserialize_lambda_string")]
     #[serde(default)]
     pub challenge_name: Option<String>,
-    #[serde(default="bool:default")]
+    #[serde(default="bool::default")]
     pub issue_tokens: bool,
-    #[serde(default="bool:default")]
+    #[serde(default="bool::default")]
     pub fail_authentication: bool,
 }
 
