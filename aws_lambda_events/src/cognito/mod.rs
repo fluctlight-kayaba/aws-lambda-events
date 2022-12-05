@@ -320,8 +320,7 @@ pub struct CognitoEventUserPoolsDefineAuthChallengeRequest {
     #[serde(deserialize_with = "deserialize_lambda_map")]
     #[serde(default)]
     pub client_metadata: HashMap<String, String>,
-    #[serde(default="bool::default")]
-    pub user_not_found: bool,
+    pub user_not_found: Option<bool>,
 }
 
 /// `CognitoEventUserPoolsDefineAuthChallengeResponse` defines auth challenge response parameters
