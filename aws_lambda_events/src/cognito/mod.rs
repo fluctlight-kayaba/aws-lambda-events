@@ -412,8 +412,7 @@ where
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct CognitoEventUserPoolsVerifyAuthChallengeResponse {
-    #[serde(default)]
-    pub answer_correct: bool,
+    pub answer_correct: Option<bool>,
 }
 
 /// `CognitoEventUserPoolsVerifyAuthChallenge` sent by AWS Cognito User Pools to verify if the response from the end user
